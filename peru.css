@@ -1,0 +1,218 @@
+:root {
+   --color900:#ff5c77;
+   --color700: #ff8599;
+   --color500: #ffc2cc;
+   --color300: #801a2b;
+   --color-blanco: #fff;
+   --color-negro: #000;
+}
+
+/* Estilo generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    border: 5px solid red;
+    font-family: sans-serif;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contenedor{
+    
+    width: 90%;|111
+    margin: auto;
+
+    /**flexbox*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* inicio seccion encabezado o header*/
+header {
+    width: 100%;
+    /*background-color: #403228; */
+    background-color: rgb(189, 150, 226);
+    border-radius: 10px;
+    padding: 10px;
+
+    /** flexbox **/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-direction: row;
+    flex-wrap: wrap; /*hace que cuando un elemento no quepa, este pase debajo*/
+    border: 1px solid green;
+}
+
+header  .foto img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+
+    vertical-align: bottom;
+}
+
+header .foto a {
+    color: #fff;
+    font-size: 30px;
+    font-family: 'Prompt', sans-serif;
+    text-decoration:  none;
+    line-height: 80px;
+}
+
+header nav {
+    width: 40%;
+    height: 50%;
+    background-color: var(color300);
+    border-top-right-radius: 7px;
+    border-bottom: 50%; 
+    font-size: x-large;
+    font-style: oblique;
+    background-color: #ff5c77;
+    /** flexbox */
+    display: flex;
+    flex-wrap: wrap; /* hace que el bloque de menu abarque el 100% disponible de ancho */
+    align-items: center;
+}
+
+header nav a:hover {
+    background-color: var(#5738f3);
+    height: 100%;
+    width: 50%;
+}
+
+header nav a {
+    color: var(#914b4b);
+    text-decoration: none;
+    text-align: center;
+    padding: 8px;
+}
+
+
+/*********************************Fin seccion encabezado o header*****************/
+
+
+/*********************************Inicio seccion principal o main*****************/
+
+.main {
+    background-color: var(--color-blanco);
+    padding: 20px;
+    flex-basis: 70%; 
+
+}
+ 
+main article {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+/*********************************Inicio seccion barra lateral*****************/
+aside {
+    background-color: var(--color500);
+    padding: 20px;
+       /** flexbox **/
+       display: flex;
+       flex-wrap: wrap; /*hace que cuando un elemento no quepa, este pase debajo*/
+       flex-direction: column;
+       justify-content: flex-start;
+
+       flex-basis: 30%;
+
+}
+
+aside .Cancion {
+    height: 90px;
+    margin: 10px;
+    background-color: var(--color900);
+    color: var(--color500);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+     /* flex-grow: 1;
+       flex-shrink: 1;
+       flex-basis: 30%; */
+    }
+  
+    
+
+/*********************************Fin seccion barra lateral*****************/
+
+/***************************** inicio seccion pie de pagina************/
+footer{
+
+    background-color: var(--color700);   
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+footer .links{
+    background-color:var(--color500);  
+
+         /**flex box**/
+         display: flex;
+         flex-wrap: wrap;/*hace que el bloque de menu abarque el 100% disponible de ancho*/
+}
+
+footer .links a{
+    color:var(--color900);
+    text-decoration: none;
+    text-align: center;
+    padding: 8px;
+    /**flexbox*/
+    flex-grow: 1; /*hace que el bloque de menu abarque el 100%disponible de ancho*/
+}
+
+footer .links a:hover{
+    background-color:  var(--color-negro) ;
+}
+@media screen and (max-width: 800px){
+    .contenedor{
+        flex-direction: column;
+    }    
+        
+        
+    header{
+        flex-direction: column;
+        padding: 0%;
+    }
+
+    header .logo{
+        margin: 20px 0;
+    }
+
+    header nav{
+        width:100%;
+    }
+
+    aside{
+        flex-direction: row;
+        flex: 0;
+    }
+
+    aside .widget{
+        flex-grow: 1;
+    }
+}
+
+@media screen and (max-width: 600px){
+    aside{
+        flex-direction: column;
+    }
+    footer{
+        justify-content: space-around;
+    }
+}
+/***************************** fin seccion pie de pagina************/
